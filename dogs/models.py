@@ -20,7 +20,7 @@ class Dog(models.Model):
     # category = models.CharField(max_length=100, verbose_name='Порода')
     category = models.ForeignKey(Category, on_delete=models.CASCADE, verbose_name='Порода')
     photo = models.ImageField(upload_to='dogs/', **NULLABLE, verbose_name='Фотография')
-    birth_day = models.DateTimeField(**NULLABLE, verbose_name="Дата рождения")
+    birth_day = models.DateField(**NULLABLE, verbose_name="Дата рождения")
 
     def __str__(self):
         return f"{self.name} ({self.category})"
